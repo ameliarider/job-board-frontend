@@ -1,3 +1,7 @@
 export function Footer() {
-  console.log("this is the footer");
+  return (
+    <div>
+      <p>Copyright 2025</p>
+    </div>
+  );
 }
