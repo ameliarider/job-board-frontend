@@ -1,8 +1,24 @@
-export function Header() {
+
+import { Link } from "react-router-dom";
+import { LogoutLink } from "./LogoutLink";
+
+export function Header({ isLoggedIn, setIsLoggedIn }) {
   return (
-    <div>
-      <h1>Job Board</h1>
-      <h2>Your one-stop shop for posting and finding jobs!</h2>
-    </div>
-  )
+    <header>
+      <nav>
+        <div>
+          <Link to="/">Job Board!</Link>
+          <div>
+            {isLoggedIn ? (
+              <LogoutLink setIsLoggedIn={setIsLoggedIn} />
+            ) : (
+              <>
+                <Link to="/signup">Sign Up</Link> | <Link to="/login">Login</Link>
+              </>
+            )}
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
 }

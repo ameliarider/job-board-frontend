@@ -1,7 +1,7 @@
 export function Footer() {
   return (
-    <div>
-      <p>Copyright 2025</p>
-    </div>
+    <footer>
+      <p>&copy; 2025 Your App Name. All rights reserved.</p>
+    </footer>
   );
 }
