@@ -1,3 +1,7 @@
 export function Footer() {
-  console.log("this is the footer");
+  return (
+    <footer>
+      <p>&copy; 2025 Your App Name. All rights reserved.</p>
+    </footer>
+  );
 }
