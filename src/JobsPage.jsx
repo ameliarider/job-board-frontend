@@ -5,13 +5,27 @@ import { JobsNew } from './JobsNew'
 import { LoginPage } from './LoginPage'
 import { SignupPage } from './SignupPage'
 import { LogoutLink } from './LogoutLink'
+import { useState, useEffect } from "react";
+import axios from "axios";
+
 
 
 
 export function JobsPage() {
+  const [jobs, setJobs] = useState([]);
+
+  const handleIndex = () => {
+    axios.get("localhost:3000/jobs.json").then((response) => {
+      console.log(response.data);
+      setJobs(response.data);
+    });
+  }
+
+  useEffect(handleIndex, []);
+
   return (
     <main>
-      <h1>Welcome to React!</h1>
+      <JobsIndex jobs={jobs}/>
     </main>
   );
 }
